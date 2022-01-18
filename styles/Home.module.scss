@@ -39,6 +39,20 @@
       cursor: pointer;
     }
   }
+
+  .row {
+    display: flex;
+  }
+
+  .columnMain {
+    width: 66.6667%;
+    margin: 0; padding: 0;
+  }
+  
+  .columnSub {
+    width: 33.3333%;
+    margin: 0; padding: 0;
+  }
 }
 
 .footer {
