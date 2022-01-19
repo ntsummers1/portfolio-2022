@@ -18,10 +18,21 @@
   h3,
   h4,
   h5 {
-    color: variables.$primary-color;
+    font-weight: bold;
+  }
+
+  h1 {
+    margin: 1em 0;
+    margin-top: 1em;
+    line-height: 9vw;
+    background-image: linear-gradient(147deg, variables.$h1-gradient-left-color, variables.$h1-gradient-right-color );
+    background-clip: text;
+    color: transparent;
+    letter-spacing: .1em;
   }
 
   a {
+    color: variables.$primary-color;
     &:hover {
       text-decoration: underline;
     }
@@ -40,8 +51,8 @@
   
     &:hover,
     &:focus { 
-      box-shadow: inset 0 0 0 2em adjust-hue(variables.$primary-color, 90deg);
-      border-color: adjust-hue(variables.$primary-color, 90deg);
+      box-shadow: inset 0 0 0 2em adjust-hue(variables.$primary-color, 15deg);
+      border-color: adjust-hue(variables.$primary-color, 15deg);
       color: #fff;
       cursor: pointer;
     }
@@ -59,6 +70,50 @@
   .columnSub {
     width: 33.3333%;
     margin: 0; padding: 0;
+  }
+
+  .columnThird {
+    width: 33.3333%;
+    margin: 0; padding: 0;
+  }
+
+  .rowLinks {
+    margin: 0 0 3em 0;
+    border-top: 1px solid variables.$primary-color;
+
+    p {
+      font-weight: bold;
+      margin-bottom: .5em;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    a {
+      margin: 0;
+      letter-spacing: .05em;
+    }
+  }
+  
+  .tools {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+
+    .tool {
+      display: flex;
+      width: 100%;
+    }
+
+    a {
+      width: 30%;
+    }
+
+    p {
+      width: 70%;
+      margin: 0;
+      line-height: 40px;
+      vertical-align: middle;
+    }
   }
 }
 

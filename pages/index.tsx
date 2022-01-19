@@ -16,22 +16,22 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1>Explore my resume</h1>
-        <div id="resumeLinks">
-          <div>
-            <p>Email:</p>
+        <h1>Resume</h1>
+        <div className={[styles.row, styles.rowLinks].join(" ")}>
+          <div className={styles.columnThird}>
+            <p>Email</p>
             <a href="mailto:ntsummers1@gmail.com?subject = Website&body = Message">
               ntsummers1@gmail.com
             </a>
           </div>
-          <div>
-            <p>Linkedin:</p>
-            <a href="https://www.linkedin.com/in/nicholas-summers-454329aa/">
-              linkedin.com/in/nicholas-summers-454329aa/
+          <div className={styles.columnThird}>
+            <p>Linkedin</p>
+            <a href="https://www.linkedin.com/in/nicholas-summers-theo/">
+              linkedin.com/in/nicholas-summers-theo
             </a>
           </div>
-          <div>
-            <p>GitHub:</p>
+          <div className={styles.columnThird}>
+            <p>GitHub</p>
             <a href="https://github.com/ntsummers1">github.com/ntsummers1</a>
           </div>
         </div>
@@ -43,8 +43,9 @@ const Home: NextPage = () => {
               <p>
                 This resume tells the story of me and how I came into coding and
                 development. This is so you can gain an understanding of how I
-                got to where I am today. I also have your standard professional
-                resume here should you prefer that format.
+                got to where I am today. Think of it as looking at your
+                instagram feed - reading oldest to newest. I also have your
+                standard professional resume here should you prefer that format.
               </p>
               <button> Download Professional Resume </button>
             </div>
@@ -129,8 +130,8 @@ const Home: NextPage = () => {
 
             <h2>Tools/Code of the Trade</h2>
 
-            <article>
-              <p>
+            <article className={styles.tools}>
+              <div className={styles.tool}>
                 <a
                   href="https://developer.android.com"
                   target="_blank"
@@ -143,6 +144,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Android </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://angular.io" target="_blank" rel="noreferrer">
                   <Image
                     src="https://angular.io/assets/images/logos/angular/angular.svg"
@@ -151,6 +155,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Angular </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://babeljs.io/" target="_blank" rel="noreferrer">
                   <Image
                     src="https://www.vectorlogo.zone/logos/babeljs/babeljs-icon.svg"
@@ -159,6 +166,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Babel </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://getbootstrap.com"
                   target="_blank"
@@ -171,6 +181,10 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Bootstrap </p>
+              </div>
+
+              <div className={styles.tool}>
                 <a
                   href="https://www.w3schools.com/css/"
                   target="_blank"
@@ -183,6 +197,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> CSS3 </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://dart.dev" target="_blank" rel="noreferrer">
                   <Image
                     src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg"
@@ -191,6 +208,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Dart </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://expressjs.com"
                   target="_blank"
@@ -203,6 +223,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Express </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://www.figma.com/"
                   target="_blank"
@@ -215,6 +238,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Figma </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://firebase.google.com/"
                   target="_blank"
@@ -227,6 +253,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Firebase </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://flutter.dev" target="_blank" rel="noreferrer">
                   <Image
                     src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg"
@@ -235,6 +264,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Flutter </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://graphql.org" target="_blank" rel="noreferrer">
                   <Image
                     src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg"
@@ -243,6 +275,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> GraphQL </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://gulpjs.com" target="_blank" rel="noreferrer">
                   <Image
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gulp/gulp-plain.svg"
@@ -251,6 +286,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Gulp </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://www.w3.org/html/"
                   target="_blank"
@@ -263,6 +301,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> HTML5 </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://www.adobe.com/in/products/illustrator.html"
                   target="_blank"
@@ -275,6 +316,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Adobe Illustrator </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://www.invisionapp.com/"
                   target="_blank"
@@ -287,6 +331,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Invision </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://www.java.com" target="_blank" rel="noreferrer">
                   <Image
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
@@ -295,6 +342,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Java </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
                   target="_blank"
@@ -307,6 +357,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Javascript </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://kotlinlang.org"
                   target="_blank"
@@ -319,6 +372,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Kotlin </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://materializecss.com/"
                   target="_blank"
@@ -331,6 +387,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Materialize </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://www.mysql.com/"
                   target="_blank"
@@ -343,6 +402,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> MySQL </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
                   <Image
                     src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg"
@@ -351,6 +413,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> NextJS </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://nodejs.org" target="_blank" rel="noreferrer">
                   <Image
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
@@ -359,6 +424,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> NodeJS </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://www.photoshop.com/en"
                   target="_blank"
@@ -371,6 +439,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Photoshop </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://www.php.net" target="_blank" rel="noreferrer">
                   <Image
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
@@ -379,6 +450,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> PHP </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://postman.com" target="_blank" rel="noreferrer">
                   <Image
                     src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
@@ -387,6 +461,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Postman </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
                   <Image
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
@@ -395,6 +472,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> ReactJS </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://reactnative.dev/"
                   target="_blank"
@@ -407,6 +487,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> React Native </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://redux.js.org" target="_blank" rel="noreferrer">
                   <Image
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
@@ -415,6 +498,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Redux </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://sass-lang.com"
                   target="_blank"
@@ -427,6 +513,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Sass </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://www.sketch.com/"
                   target="_blank"
@@ -439,6 +528,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Sketch </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://spring.io/" target="_blank" rel="noreferrer">
                   <Image
                     src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg"
@@ -447,6 +539,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Spring </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://tailwindcss.com/"
                   target="_blank"
@@ -459,6 +554,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Tailwind </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://www.typescriptlang.org/"
                   target="_blank"
@@ -471,6 +569,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> TypeScript </p>
+              </div>
+              <div className={styles.tool}>
                 <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
                   <Image
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg"
@@ -479,6 +580,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> VueJS </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://vuetifyjs.com/en/"
                   target="_blank"
@@ -491,6 +595,9 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
+                <p> Vuetify </p>
+              </div>
+              <div className={styles.tool}>
                 <a
                   href="https://webpack.js.org"
                   target="_blank"
@@ -503,7 +610,8 @@ const Home: NextPage = () => {
                     height="40"
                   />
                 </a>
-              </p>
+                <p> Webpack </p>
+              </div>
             </article>
           </div>
         </div>
