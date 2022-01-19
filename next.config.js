@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const path = require('path')
 
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
+  assetPrefix: isProd ? '/portfolio-2022/' : '',
   reactStrictMode: true,
   images: {
     domains: [
