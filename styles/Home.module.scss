@@ -65,11 +65,21 @@
   .columnMain {
     width: 66.6667%;
     margin: 0; padding: 0;
+
+    .section {
+      margin-bottom: 3em;
+      width: 85%;
+    }
   }
   
   .columnSub {
     width: 33.3333%;
     margin: 0; padding: 0;
+
+    .section {
+      margin-bottom: 3em;
+      width: 81.1737%;
+    }
   }
 
   .columnThird {
@@ -93,6 +103,49 @@
       letter-spacing: .05em;
     }
   }
+
+  .education {
+    article {
+      margin: 0 0 1.5em 0;
+    }
+    h3 {
+      margin: 0 0 .25em 0;
+    }
+    li {
+      font-weight: 400;
+      letter-spacing: .05em;
+      margin: 0 0 .15em 0;
+    } 
+    p {
+      margin: .50em 0;
+    }
+  }
+
+  .experience {
+    article {
+      margin: 0 0 1.5em 0;
+    }
+    h3 {
+      margin: 0 0 .25em 0;
+    }
+    li {
+      font-weight: 400;
+      letter-spacing: .05em;
+      margin: 0 0 .15em 0;
+    } 
+    p {
+      margin: .50em 0;
+    }
+  }
+
+  .skills {
+    h4 {
+      margin: 1em 0 .5em 0;
+    }
+    p {
+      margin: 0 0 2em 0;
+    }
+  }
   
   .tools {
     display: grid;
@@ -111,7 +164,7 @@
     p {
       width: 70%;
       margin: 0;
-      line-height: 40px;
+      line-height: 30px;
       vertical-align: middle;
     }
   }

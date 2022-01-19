@@ -1,29 +1,41 @@
 @use "variables";
 
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@100;300;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@100;300;400;700;900&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 300;
   background-color: variables.$background-color;
   color: variables.$regular-text-color;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Abril Fatface', serif, cursive;
+h1,
+h2 {
+  font-family: "Abril Fatface", serif, cursive;
   text-transform: uppercase;
 }
 
 h1 {
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-size: 9vw;
 }
 
-h2, h3, h4, h5 {
-  letter-spacing: .1em;
+h2,
+h3,
+h4,
+h5 {
+  letter-spacing: 0.1em;
+}
+
+h3,
+h4,
+h5 {
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -32,7 +44,12 @@ a {
 }
 
 p {
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
+}
+
+ul {
+  margin: 0; padding: 0;
+  list-style-type: none;
 }
 
 * {
