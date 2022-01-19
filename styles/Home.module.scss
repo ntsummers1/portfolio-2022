@@ -31,6 +31,10 @@
     letter-spacing: .1em;
   }
 
+  h2 {
+    color: variables.$primary-color;
+  }
+
   a {
     color: variables.$primary-color;
     &:hover {
