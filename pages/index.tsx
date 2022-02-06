@@ -1,49 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
-  const outsideImageRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [scale, setScale] = useState(1)
-  useEffect(() => {
-    function onScroll() {
-      let currentPosition = window.pageYOffset; // or use document.documentElement.scrollTop;
-      if (currentPosition > 0 && currentPosition < 920) {
-        if (scrollPosition < currentPosition) {
-          //User is scrolling down, therefor the image should be zooming out to reveal outside image
-          console.log('down')
-          if (scale < 0.5) {
-            setScale(0.5)
-          } else if (scale  > 0.5) {
-            setScale(scale - currentPosition * 0.00011)
-          }
-          console.log(`scale: ${scale}`)
-        } else if (scrollPosition > currentPosition) {
-          console.log('up')
-          //User is scrolling up, therefor the image should be zooming in on inside image
-          if (scale > 1) {
-            setScale(1)
-          } else if (scale < 1){
-            setScale(scale + currentPosition * 0.00011)
-          }
-          console.log(`scale: ${scale}`)
-        }
-      }
-      if (currentPosition == 0) {
-        console.log(`currentPosition == 0 ${currentPosition}`)
-        setScale(1)
-      }
-      setScrollPosition(currentPosition <= 0 ? 0 : currentPosition);
-      outsideImageRef.current.style = `transform: translate3d(0px, 0px, 0px) scale3d(${scale}, ${scale}, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);`;
-    }
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollPosition, scale]);
 
   return (
     <div className={styles.container}>
@@ -57,39 +17,6 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.scrollingHeroWrap}>
-          <div className={styles.scrollingHeroTrigger}></div>
-          <div className={styles.scrollingHeroStickyWrap}>
-            <div className={styles.scrollingHeroOverflowWrap}>
-              <header
-                className={styles.scrollingHero}
-                ref={outsideImageRef}
-                style={{
-                  transform:
-                    "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                }}
-              >
-                <img
-                  src={"/images/outside-image.png"}
-                  alt="outside-image"
-                  className={styles.heroImage}
-                ></img>
-                <div className={styles.scrollingHeroInsideContainer}>
-                  <div className={styles.scrollingHeroInsideImageWrap}>
-                    <div className={styles.scrollingHeroInsideImageContainer}>
-                      <img
-                        src={"/images/inside-image.jpeg"}
-                        alt="inside-image"
-                        className={styles.heroImageInside}
-                      ></img>
-                    </div>
-                  </div>
-                </div>
-              </header>
-            </div>
-          </div>
-          <div className={styles.scrollingHeroStickyGap}></div>
-        </div>
         <section>
           <p style={{height: '400vh'}}>
             Bacon ipsum dolor amet short ribs tri-tip pancetta frankfurter
