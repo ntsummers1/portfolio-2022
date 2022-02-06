@@ -6,7 +6,6 @@ module.exports = {
   assetPrefix: isProd ? '/portfolio-2022/' : '',
   reactStrictMode: true,
   images: {
-    loader: 'imgix',
     domains: [
       'raw.githubusercontent.com',
       'angular.io',
