@@ -1,0 +1,178 @@
+@use "animations";
+@use "variables";
+
+.container {
+  animation: fadeIn 1.5s;
+  -webkit-animation: fadeIn 1.5s;
+  -moz-animation: fadeIn 1.5s;
+  -o-animation: fadeIn 1.5s;
+  -ms-animation: fadeIn 1.5s;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: bold;
+  }
+
+  h1 {
+    margin: 1em 0;
+    margin-top: 1em;
+    line-height: 9vw;
+    background-image: linear-gradient(147deg, variables.$h1-gradient-left-color, variables.$h1-gradient-right-color );
+    background-clip: text;
+    color: transparent;
+    letter-spacing: .1em;
+  }
+
+  h2 {
+    color: variables.$primary-color;
+  }
+
+  a {
+    color: variables.$primary-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  button {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0;
+    padding: 1em 2em;
+
+    color: variables.$primary-color;
+    transition: 0.25s;
+  
+    &:hover,
+    &:focus { 
+      box-shadow: inset 0 0 0 2em adjust-hue(variables.$primary-color, 15deg);
+      border-color: adjust-hue(variables.$primary-color, 15deg);
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .columnMain {
+    width: 66.6667%;
+    margin: 0; padding: 0;
+
+    .section {
+      margin-bottom: 3em;
+      width: 85%;
+    }
+  }
+  
+  .columnSub {
+    width: 33.3333%;
+    margin: 0; padding: 0;
+
+    .section {
+      margin-bottom: 3em;
+      width: 81.1737%;
+    }
+  }
+
+  .columnThird {
+    width: 33.3333%;
+    margin: 0; padding: 0;
+  }
+
+  .rowLinks {
+    margin: 0 0 3em 0;
+    border-top: 1px solid variables.$primary-color;
+
+    p {
+      font-weight: bold;
+      margin-bottom: .5em;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    a {
+      margin: 0;
+      letter-spacing: .05em;
+    }
+  }
+
+  .education {
+    article {
+      margin: 0 0 1.5em 0;
+    }
+    h3 {
+      margin: 0 0 .25em 0;
+    }
+    li {
+      font-weight: 400;
+      letter-spacing: .05em;
+      margin: 0 0 .15em 0;
+    } 
+    p {
+      margin: .50em 0;
+    }
+  }
+
+  .experience {
+    article {
+      margin: 0 0 1.5em 0;
+    }
+    h3 {
+      margin: 0 0 .25em 0;
+    }
+    li {
+      font-weight: 400;
+      letter-spacing: .05em;
+      margin: 0 0 .15em 0;
+    } 
+    p {
+      margin: .50em 0;
+    }
+  }
+
+  .skills {
+    h4 {
+      margin: 1em 0 .5em 0;
+    }
+    p {
+      margin: 0 0 2em 0;
+    }
+  }
+  
+  .tools {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+
+    .tool {
+      display: flex;
+      width: 100%;
+    }
+
+    a {
+      width: 30%;
+    }
+
+    p {
+      width: 70%;
+      margin: 0;
+      line-height: 30px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.footer {
+}

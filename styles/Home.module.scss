@@ -2,175 +2,141 @@
 @use "variables";
 
 .container {
-  animation: fadeIn 1.5s;
-  -webkit-animation: fadeIn 1.5s;
-  -moz-animation: fadeIn 1.5s;
-  -o-animation: fadeIn 1.5s;
-  -ms-animation: fadeIn 1.5s;
-
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .main {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-weight: bold;
+
+  .scrollingHeroWrap {
+    position: relative;
   }
 
-  h1 {
-    margin: 1em 0;
-    margin-top: 1em;
-    line-height: 9vw;
-    background-image: linear-gradient(147deg, variables.$h1-gradient-left-color, variables.$h1-gradient-right-color );
-    background-clip: text;
-    color: transparent;
-    letter-spacing: .1em;
+  .scrollingHeroTrigger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    z-index: -1;
+    height: 100vh;
   }
 
-  h2 {
-    color: variables.$primary-color;
+  .scrollingHeroStickyWrap {
+    height: 60vw;
+    min-height: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
-  a {
-    color: variables.$primary-color;
-    &:hover {
-      text-decoration: underline;
-    }
+  .scrollingHeroStickyGap {
+    height: 100vh;
   }
 
-  button {
-    background: none;
-    border: 2px solid;
-    font: inherit;
-    line-height: 1;
-    margin: 0;
-    padding: 1em 2em;
-
-    color: variables.$primary-color;
-    transition: 0.25s;
-  
-    &:hover,
-    &:focus { 
-      box-shadow: inset 0 0 0 2em adjust-hue(variables.$primary-color, 15deg);
-      border-color: adjust-hue(variables.$primary-color, 15deg);
-      color: #fff;
-      cursor: pointer;
-    }
+  .scrollingHeroOverflowWrap {
+    overflow: hidden;
+    height: 100%;
   }
 
-  .row {
+  .scrollingHero {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    height: 100vh;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    will-change: transform;
+    transform-style: preserve-3d;
   }
 
-  .columnMain {
-    width: 66.6667%;
-    margin: 0; padding: 0;
-
-    .section {
-      margin-bottom: 3em;
-      width: 85%;
-    }
-  }
-  
-  .columnSub {
-    width: 33.3333%;
-    margin: 0; padding: 0;
-
-    .section {
-      margin-bottom: 3em;
-      width: 81.1737%;
-    }
+  .heroImage {
+    will-change: opacity;
+    position: relative;
+    left: 50%;
+    z-index: 1;
+    width: 16.9em;
+    max-width: none;
+    margin-top: 3.2em;
+    margin-left: -8.45em;
+    opacity: 1;
+    font-size: 10vw;
+    border: 0;
+    vertical-align: middle;
+    display: inline-block;
   }
 
-  .columnThird {
-    width: 33.3333%;
-    margin: 0; padding: 0;
+  .scrollingHeroInsideContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    max-width: none;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 980px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
-  .rowLinks {
-    margin: 0 0 3em 0;
-    border-top: 1px solid variables.$primary-color;
-
-    p {
-      font-weight: bold;
-      margin-bottom: .5em;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-    }
-
-    a {
-      margin: 0;
-      letter-spacing: .05em;
-    }
+  .scrollingHeroInsideImageWrap {
+    position: relative;
+    z-index: 2;
+    width: 25vw;
+    height: 25vw;
+    max-height: 40vh;
+    max-width: 40vh;
+    min-height: 350px;
+    min-width: 350px;
+    margin-bottom: 64px;
   }
 
-  .education {
-    article {
-      margin: 0 0 1.5em 0;
-    }
-    h3 {
-      margin: 0 0 .25em 0;
-    }
-    li {
-      font-weight: 400;
-      letter-spacing: .05em;
-      margin: 0 0 .15em 0;
-    } 
-    p {
-      margin: .50em 0;
-    }
-  }
-
-  .experience {
-    article {
-      margin: 0 0 1.5em 0;
-    }
-    h3 {
-      margin: 0 0 .25em 0;
-    }
-    li {
-      font-weight: 400;
-      letter-spacing: .05em;
-      margin: 0 0 .15em 0;
-    } 
-    p {
-      margin: .50em 0;
-    }
-  }
-
-  .skills {
-    h4 {
-      margin: 1em 0 .5em 0;
-    }
-    p {
-      margin: 0 0 2em 0;
-    }
-  }
-  
-  .tools {
-    display: grid;
+  .scrollingHeroInsideImageContainer {
+    position: relative;
+    z-index: 3;
     width: 100%;
-    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    padding: 12px;
+    border: 1px solid hsla(0, 0%, 100%, 0.3);
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 84%, 0.5);
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
 
-    .tool {
-      display: flex;
-      width: 100%;
-    }
-
-    a {
-      width: 30%;
-    }
-
-    p {
-      width: 70%;
-      margin: 0;
-      line-height: 30px;
-      vertical-align: middle;
-    }
+  .heroImageInside {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 50%;
+    order: 0;
+    max-width: 100%;
+    display: inline-block;
   }
 }
 
