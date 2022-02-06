@@ -1,0 +1,27 @@
+.scrollingView {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.stickyView {
+  position: relative;
+}
+
+.stickyViewSticky{
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.basicStickyContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.basicStickyContent * {
+  text-align: center;
+}
