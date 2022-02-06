@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import ScrollContext from './ScrollContext';
-import './stickyView.scss';
+import ScrollContext from './StickyContext';
+import styles from'./stickyView.module.css';
 
 export default function StickyView(props) {
     const { height, children } = props;
@@ -32,9 +32,9 @@ export default function StickyView(props) {
     }, [scrollingElement]);
 
     return (
-        <div className="sticky-view" ref={elRef} style={{ height }}>
+        <div className={styles.stickyView} ref={elRef} style={{ height }}>
             <div
-                className="sticky-view-sticky"
+                className={styles.stickyViewSticky}
                 style={{ height: scrollingElement?.clientHeight }}
             >
                 {children(proportion)}

@@ -1,8 +1,6 @@
-@use "animations";
-@use "variables";
-
 .main {
-}
-
-.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }

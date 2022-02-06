@@ -1,24 +1,41 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import styles from "../styles/Home.module.scss";
+import {useState } from "react";
+import StickyView from "./StickyView";
+import ScrollContext from "./StickyContext";
+import styles from "./stickyView.module.css";
 
-const Home: NextPage = () => {
+export default function Sticky() {
+  const [scrollingElement, setScrollingElement] = useState(null);
 
+  function scrollingElRef(ref) {
+    setScrollingElement(ref);
+  }
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Nicholas Summers Portfolio</title>
-        <meta
-          name="description"
-          content="Nicholas Summers' Portfolio Website"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
+    <ScrollContext.Provider value={{ scrollingElement }}>
+      <div className={styles.scrollingView} ref={scrollingElRef}>
+        <StickyView height={3240}>
+          {(proportion) => (
+            <div className={styles.basicStickyContent}>
+              <h1>{proportion}</h1>
+              <h6>Scroll this page!</h6>
+              <p>
+                As you scroll, you`&lspq`ll notice that this number changes, and
+                text stays stuck on screen.
+              </p>
+              <p>This number goes from:</p>
+              <li>
+                0 when the top of the sticky container is at the top of its
+                parent
+              </li>
+              <li>
+                1 when the bottom of the sticky container is at the bottom
+                of its parent
+              </li>
+            </div>
+          )}
+        </StickyView>
         <section>
-          <p style={{height: '400vh'}}>
+          <p style={{height: '100vh'}}>
             Bacon ipsum dolor amet short ribs tri-tip pancetta frankfurter
             jerky, ham salami bacon swine fatback pork belly. Short ribs
             hamburger buffalo, ribeye pancetta drumstick burgdoggen beef ribs.
@@ -59,11 +76,7 @@ const Home: NextPage = () => {
             tri-tip pork loin chuck filet mignon turducken buffalo salami.
           </p>
         </section>
-      </main>
-
-      <footer className={styles.footer}></footer>
-    </div>
+      </div>
+    </ScrollContext.Provider>
   );
 };
-
-export default Home;
