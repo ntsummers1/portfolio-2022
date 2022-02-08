@@ -10,24 +10,29 @@ export function getInterpolators() {
   }
 
   function firstSectionBackgroundInterpolator(proportion) {
-    if (proportion < -0.3) {
-      return { transform: `translateY(20rem) scaleX(0.05)` };
-    } else if (proportion < 0) {
-      const position = -proportion * 20 * 3.3;
-      const scale = 1 + proportion * 3.3 * 0.95;
-      return { transform: `translateY(${position}rem) scaleX(${scale})` };
-    } else if (proportion < 1) {
-      return {};
-    } else if (proportion < 1.3) {
-      const scale = (1.3 - proportion) / 0.3;
-      return { transform: `scaleX(${scale})` };
+    const scale = ((10/(proportion + 3))-2.3);
+    if (scale <= .31) {
+      return {
+        transform: `scale3d(${.31}, ${.31}, ${.31})`,
+      }
     } else {
-      return { transform: "scaleX(0)" };
+      return {
+        transform: `scale3d(${scale}, ${scale}, ${scale})`,
+      }
+    }
+  }
+
+  function firstSectionBackgroundImageInterpolator(proportion) {
+    if (proportion < .2) {
+      return { opacity: proportion * 5 };
+    } else {
+      return { opacity: 1 };
     }
   }
 
   return {
     firstSectionForegroundInterpolator,
     firstSectionBackgroundInterpolator,
+    firstSectionBackgroundImageInterpolator,
   };
 }

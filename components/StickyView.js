@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import ScrollContext from './StickyContext';
-import styles from'./stickyView.module.css';
+import styles from'../styles/StickyView.module.scss';
 
 export default function StickyView(props) {
     const { height, children } = props;

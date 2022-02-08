@@ -1,0 +1,301 @@
+@use "variables";
+
+@mixin bp($point) {
+
+  @if $point == sm {
+    @media (min-width: 480px) { @content; }
+  }
+  @else if $point == maxmd {
+    @media (max-width: 767px) { @content; }
+  }
+  @else if $point == md {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == lg {
+    @media (min-width: 1000px)  { @content; }
+  }
+  @else if $point == xlg {
+    @media (min-width: 1200px)  { @content; }
+  }
+}
+
+.scrollingView {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.stickyView {
+  position: relative;
+}
+
+.stickyViewSticky{
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.basicStickyContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.basicStickyContent * {
+  text-align: center;
+}
+
+.scrollingStickyBackground {
+  display: flex;
+  height: 100vh;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.heroImage {
+  position: relative;
+  left: 50%;
+  z-index: 1;
+  width: 16.9em;
+  max-width: none;
+  margin-top: 3.2em;
+  margin-left: -8.45em;
+  opacity: 0;
+  font-size: 10vw;
+  display: none;
+  @include bp(lg) { display: block; }
+}
+
+.firstSectionHeroWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  max-width: none;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.firstSectionProfileImageContainer {
+  position: relative;
+  z-index: 2;
+  width: 25vw;
+  height: 25vw;
+  max-height: 40vh;
+  max-width: 40vh;
+  min-height: 350px;
+  min-width: 350px;
+  margin-bottom: 64px;
+}
+
+.firstSectionProfileImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  border-radius: 50%;
+}
+
+.firstSectionHeadingContainer {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.firstSectionHeadingTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 25px;
+  line-height: 1.2;
+  letter-spacing: .1em;
+}
+
+.firstSectionHeadingDescContainer {
+  position: relative;
+  margin-top: 18px;
+  margin-bottom: 22px;
+}
+
+.firstSectionDescHeading {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 92px;
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.container {
+  background: #f4f7f9;
+  padding: 50px 0;
+}
+
+.project {
+  max-width: 500px;
+  width: 100%; height: 250px;
+  padding: .5rem 2rem; margin: 0 auto;
+  position: relative; 
+  transform: scale(1);
+
+  transition: all .25s;
+  &:hover {
+    text-decoration: none;
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+
+  &Container {
+    padding: 20px; margin: 0 auto;
+    @include bp(sm) { margin-top: 40px; }
+    @include bp(md) { padding: 20px 40px;}
+    max-width: 1200px;
+  }
+	&Header {
+		margin: 0 auto; padding: 40px 0;
+		letter-spacing: .1;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 10vw;
+
+    @include bp(md) {
+      margin-bottom: 24px;
+      font-size: 64px;
+    }
+
+    @include bp(lg) {
+      font-size: 72px;
+    }
+	}
+  &s {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 3rem;
+    grid-auto-rows: minmax(300px, auto);
+    margin: 0 auto;
+  }
+  &Url {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      height: 100%; width: 100%;
+      position: absolute;
+    }
+  }
+  &Name {
+    font-size: 32px;
+    color: #fff;
+    text-align: right;
+  }
+
+  &NameDark {
+    font-size: 32px;
+    color: #333;
+    text-align: right;
+  }
+
+  &Background {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    
+    border-radius: 20px;
+    
+    overflow: hidden;
+    z-index: -1;
+    img {
+      width: 100%;
+      object-fit: cover;
+      vertical-align: middle;
+    }
+  }
+  
+  &Shadow {
+    width: 90%; height: 100%;
+    display: flex;
+    
+    position: absolute;
+    bottom: -15px; left: 50%;
+    border-radius: 20px;
+    filter: blur(15px);
+    transform: translate(-50%, 0);
+    z-index: -2;
+    overflow: hidden;
+    img {
+      margin-top: 3rem;
+      object-fit: cover;
+    }
+  }
+}
+
+.resume {
+  &Section {
+    padding: 120px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    @include bp(md) {
+      padding: 240px 0;
+    }
+  }
+
+  &Header {
+    margin-bottom: 10px;
+    font-size: 10vw;
+    text-align: center;
+    letter-spacing: .1;
+
+    @include bp(md) {
+      margin-bottom: 24px;
+      font-size: 64px;
+    }
+
+    @include bp(lg) {
+      font-size: 72px;
+    }
+  }
+
+  &Link {
+    font-size: 23px;
+    color: variables.$primary-color;
+  }
+}
