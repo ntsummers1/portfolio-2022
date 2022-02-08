@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Resume.module.scss";
 
 export default function Resume() {
@@ -12,6 +13,12 @@ export default function Resume() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <header className='header'>
+        <div className='headerContainer'>
+          <Link href="/">Home</Link>
+          <Link href="/resume">Resume</Link>
+        </div>
+      </header>
 
       <main className={styles.main}>
         <h1>Resume</h1>
