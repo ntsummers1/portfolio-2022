@@ -7,7 +7,10 @@ import { getInterpolators } from "./StickyInterpolators";
 export default function StickyHomePage() {
   const [scrollingElement, setScrollingElement] = useState(null);
 
-  const { firstSectionInterpolator } = useMemo(() => getInterpolators());
+  const {
+    firstSectionForegroundInterpolator,
+    firstSectionBackgroundInterpolator,
+  } = useMemo(() => getInterpolators());
 
   function scrollingElRef(ref) {
     setScrollingElement(ref);
@@ -20,8 +23,8 @@ export default function StickyHomePage() {
           {(proportion) => (
             <div className={styles.basicStickyContent}>
               <div
-                className="full-sticky-foreground"
-                style={firstSectionInterpolator(proportion)}
+                className={styles.scrollingStickyForeground}
+                style={firstSectionForegroundInterpolator(proportion)}
               >
                 <h1>{proportion}</h1>
                 <h6>Scroll this page!</h6>
@@ -39,6 +42,13 @@ export default function StickyHomePage() {
                   its parent
                 </li>
               </div>
+              <div
+                className={styles.scrollingStickyBackground}
+                style={{
+                  height: scrollingElement?.clientHeight,
+                  ...firstSectionBackgroundInterpolator(proportion),
+                }}
+              />
             </div>
           )}
         </StickyView>

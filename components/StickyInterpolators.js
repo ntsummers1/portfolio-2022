@@ -1,5 +1,15 @@
 export function getInterpolators() {
-  function firstSectionInterpolator(proportion) {
+  function firstSectionForegroundInterpolator(proportion) {
+    if (proportion < 0) {
+      return { opacity: 0, transform: "translateX(-20rem)" };
+    } else if (proportion > 1) {
+      return { opacity: 0, transform: "translateX(20rem)" };
+    } else {
+      return {};
+    }
+  }
+
+  function firstSectionBackgroundInterpolator(proportion) {
     if (proportion < -0.3) {
       return { transform: `translateY(20rem) scaleX(0.05)` };
     } else if (proportion < 0) {
@@ -17,6 +27,7 @@ export function getInterpolators() {
   }
 
   return {
-    firstSectionInterpolator,
+    firstSectionForegroundInterpolator,
+    firstSectionBackgroundInterpolator,
   };
 }
