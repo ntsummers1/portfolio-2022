@@ -4,7 +4,6 @@ import ScrollContext from "./StickyContext";
 import styles from "../styles/StickyView.module.scss";
 import { getInterpolators } from "./StickyInterpolators";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function StickyHomePage() {
   const [scrollingElement, setScrollingElement] = useState(null);
@@ -41,10 +40,9 @@ export default function StickyHomePage() {
                 />
                 <div className={styles.firstSectionHeroWrapper}>
                   <div className={styles.firstSectionProfileImageContainer}>
-                    <Image
-                      src={"/images/inside-image.jpeg"}
+                    <img
+                      src={"./images/inside-image.jpeg"}
                       alt="Nicholas Summers Headshot"
-                      layout="fill"
                       className={styles.firstSectionProfileImage}
                     />
                   </div>
@@ -71,7 +69,7 @@ export default function StickyHomePage() {
                 </a>
                 <div className={styles.projectBackground}>
                   <img
-                    src={"/images/msu-app.png"}
+                    src={"https://ntsummers1.github.io/portfolio-2022/images/msu-app.png"}
                     alt="MSU App"
                   />
                 </div>
