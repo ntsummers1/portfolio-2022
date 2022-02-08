@@ -32,7 +32,7 @@ export default function StickyHomePage() {
                 }}
               >
                 <img
-                  src={"./images/outside-image.png"}
+                  src={"./images/outside-img.png"}
                   alt="Nicholas Summers' Workspace"
                   sizes="100vw"
                   className={styles.heroImage}
