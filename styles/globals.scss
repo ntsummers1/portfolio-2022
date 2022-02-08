@@ -2,6 +2,25 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@100;300;400;700;900&display=swap");
 
+@mixin bp($point) {
+
+  @if $point == sm {
+    @media (min-width: 480px) { @content; }
+  }
+  @else if $point == maxmd {
+    @media (max-width: 767px) { @content; }
+  }
+  @else if $point == md {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == lg {
+    @media (min-width: 1000px)  { @content; }
+  }
+  @else if $point == xlg {
+    @media (min-width: 1200px)  { @content; }
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -23,7 +42,8 @@ h2 {
 
 h1 {
   letter-spacing: 0.1em;
-  font-size: 9vw;
+  font-size: 64px;
+  @include bp(md) { font-size: 9vw; }
 }
 
 h2,
