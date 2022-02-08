@@ -1,10 +1,13 @@
-import {useState } from "react";
+import { useMemo, useState } from "react";
 import StickyView from "./StickyView";
 import ScrollContext from "./StickyContext";
 import styles from "./stickyView.module.css";
+import { getInterpolators } from "./StickyInterpolators";
 
-export default function Sticky() {
+export default function StickyHomePage() {
   const [scrollingElement, setScrollingElement] = useState(null);
+
+  const { firstSectionInterpolator } = useMemo(() => getInterpolators());
 
   function scrollingElRef(ref) {
     setScrollingElement(ref);
@@ -16,26 +19,31 @@ export default function Sticky() {
         <StickyView height={3240}>
           {(proportion) => (
             <div className={styles.basicStickyContent}>
-              <h1>{proportion}</h1>
-              <h6>Scroll this page!</h6>
-              <p>
-                As you scroll, you`&lspq`ll notice that this number changes, and
-                text stays stuck on screen.
-              </p>
-              <p>This number goes from:</p>
-              <li>
-                0 when the top of the sticky container is at the top of its
-                parent
-              </li>
-              <li>
-                1 when the bottom of the sticky container is at the bottom
-                of its parent
-              </li>
+              <div
+                className="full-sticky-foreground"
+                style={firstSectionInterpolator(proportion)}
+              >
+                <h1>{proportion}</h1>
+                <h6>Scroll this page!</h6>
+                <p>
+                  As you scroll, you`&lspq`ll notice that this number changes,
+                  and text stays stuck on screen.
+                </p>
+                <p>This number goes from:</p>
+                <li>
+                  0 when the top of the sticky container is at the top of its
+                  parent
+                </li>
+                <li>
+                  1 when the bottom of the sticky container is at the bottom of
+                  its parent
+                </li>
+              </div>
             </div>
           )}
         </StickyView>
         <section>
-          <p style={{height: '100vh'}}>
+          <p style={{ height: "100vh" }}>
             Bacon ipsum dolor amet short ribs tri-tip pancetta frankfurter
             jerky, ham salami bacon swine fatback pork belly. Short ribs
             hamburger buffalo, ribeye pancetta drumstick burgdoggen beef ribs.
@@ -79,4 +87,4 @@ export default function Sticky() {
       </div>
     </ScrollContext.Provider>
   );
-};
+}

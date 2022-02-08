@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Sticky from '../components/Sticky'
+import StickyHomePage from '../components/StickyHomePage'
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Sticky/>
+        <StickyHomePage/>
       </main>
     </div>
   )
