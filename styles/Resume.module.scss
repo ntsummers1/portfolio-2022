@@ -37,9 +37,6 @@
 
   a {
     color: variables.$primary-color;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   button {
@@ -104,6 +101,7 @@
 
     a {
       margin: 0;
+      font-weight: bold;
       letter-spacing: .05em;
     }
   }

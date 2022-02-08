@@ -42,7 +42,10 @@ h5 {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 p {
