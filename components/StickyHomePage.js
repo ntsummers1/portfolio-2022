@@ -69,13 +69,13 @@ export default function StickyHomePage() {
                 </a>
                 <div className={styles.projectBackground}>
                   <img
-                    src={"https://ntsummers1.github.io/portfolio-2022/images/msu-app.png"}
+                    src={"./images/msu-app.png"}
                     alt="MSU App"
                   />
                 </div>
                 <div className={styles.projectShadow}>
                   <img
-                    src={"/images/msu-app.png"}
+                    src={"./images/msu-app.png"}
                     alt="MSU App"
                   />
                 </div>
@@ -88,13 +88,13 @@ export default function StickyHomePage() {
                 </a>
                 <div className={styles.projectBackground}>
                   <img
-                    src={"/images/rutgers-app.png"}
+                    src={"./images/rutgers-app.png"}
                     alt="Rutgers Mobile App"
                   />
                 </div>
                 <div className={styles.projectShadow}>
                   <img
-                    src={"/images/rutgers-app.png"}
+                    src={"./images/rutgers-app.png"}
                     alt="Rutgers Mobile App"
                   />
                 </div>
@@ -107,13 +107,13 @@ export default function StickyHomePage() {
                 </a>
                 <div className={styles.projectBackground}>
                   <img
-                    src={"/images/maps-app.png"}
+                    src={"./images/maps-app.png"}
                     alt="maps.msu.edu Logo"
                   />
                 </div>
                 <div className={styles.projectShadow}>
                   <img
-                    src={"/images/maps-app.png"}
+                    src={"./images/maps-app.png"}
                     alt="maps.msu.edu Logo"
                   />
                 </div>
@@ -126,13 +126,13 @@ export default function StickyHomePage() {
                 </a>
                 <div className={styles.projectBackground}>
                   <img
-                    src={"/images/search-app.png"}
+                    src={"./images/search-app.png"}
                     alt="Search.msu.edu Logo"
                   />
                 </div>
                 <div className={styles.projectShadow}>
                   <img
-                    src={"/images/search-app.png"}
+                    src={"./images/search-app.png"}
                     alt="Search.msu.edu Logo"
                   />
                 </div>
